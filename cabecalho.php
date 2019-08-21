@@ -13,7 +13,7 @@
     <script src="/assets/SemanticUI/semantic.min.js"></script>
 </head>
 
-<body>
+<body >
 
     <nav class=" navbar sticky-top navbar navbar-expand-lg navbar-light bg-light">
       <!--!-->
@@ -24,7 +24,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown" >
 
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -39,13 +39,13 @@
 </ul>
     </div>
      
-      <div>
+      <div >
         Calculadora IPV4
       </div>
     
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="float: right;" >
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="" >
 
-    <ul class="navbar-nav" style="margin-left: 40%;">
+    <ul class="navbar-nav" style="margin-left:78%; margin-right: 20%;"> <!--aqui muda o "sobre"-->
 
       <li class="nav-item">
         <a class="nav-link" href="create_restaurante.php">Sobre</a>

@@ -54,8 +54,16 @@
         </head>
             <body>
 
-                <h5 style="margin-top: 6%;">Digite um ip válido</h5>
-            <div class="container" style="background-color: #9da1a5e6;">
+                <div style="background-image: url(fundo2.jpg);">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+                <h3 style="margin-bottom: 3%; color: red;">Digite um ip válido</h3>
+            <div class="container" style="background-color: #9da1a5e6; ">
 
                 <div>
 
@@ -82,7 +90,7 @@
 
 
                 
-
+</div>
             </body>
 </html>
 
