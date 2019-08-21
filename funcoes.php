@@ -1,20 +1,16 @@
 <?php
+
+
+
+
 $mascara = 0;
 /*
   if ($mascara<24) {
         echo "Digite uma máscara entre 24 e 32";
     }else{*/
-/*
 
-    function valida($primeira_trinca){
-        if ($primeira_trinca>255 and $primeira_trinca<0) {
-            echo "IP Inválido"
-        }
 
-    }
-*/
-
-    function qtd_redes(int $mascara)
+    function qtd_redes($mascara)
     {
         $total = 32;
         $bits_zerados = $total - $mascara;
@@ -38,7 +34,7 @@ $mascara = 0;
 
     
       
-    function enderecos_subrede(int $mascara) {
+    function enderecos_subrede($mascara) {
         $qtde = qtd_redes($mascara);
         $qtde_enderecos = qtd_enderecos($mascara);
         $c = 1;
@@ -52,22 +48,22 @@ $mascara = 0;
         return $resp;
     } 
 
-    function enderecos_bcast(int $mascara) {
+    function enderecos_broadcast($mascara) {
         $qtde = qtd_redes($mascara);
         $qtde_enderecos = qtd_enderecos($mascara);
         $c = 1;
-        $end_bcast = $qtde_enderecos - 1;
+        $end_broadcast = $qtde_enderecos - 1;
         $resp = array();
         while ($c <= $qtde) {
-            array_push($resp, $end_bcast);
-            $end_bcast = $end_bcast + $qtde_enderecos;
+            array_push($resp, $end_broadcast);
+            $end_broadcast = $end_broadcast + $qtde_enderecos;
             $c = $c + 1;
         }
         return $resp;
     }
 
 
-    function qtd_hosts(int $mascara)
+    function qtd_hosts($mascara)
     {
         $total = 32;
         $bits_zerados = $total - $mascara;
@@ -84,7 +80,7 @@ $mascara = 0;
         }
     }
 
-    function primeiro_host_rede(int $quarta_trinca, int $mascara)
+    function primeiro_host_rede($quarta_trinca, $mascara)
     {
         $q = qtd_enderecos($mascara);
 
@@ -96,7 +92,7 @@ $mascara = 0;
         return $primeiro_host;
     }
 
-    function ultimo_host_rede(int $quarta_trinca, int $mascara)
+    function ultimo_host_rede($quarta_trinca, $mascara)
     {
         $q = qtd_enderecos($mascara);
 
@@ -109,7 +105,7 @@ $mascara = 0;
         return $ultimo_host;
     }
 
-    function calculo_mascara(int $mascara_decimal){
+    function calculo_mascara($mascara_decimal){
 
         $mascara = '255.255.255';
         $bits_setados = $mascara_decimal - 24;
@@ -126,9 +122,9 @@ $mascara = 0;
 
     }
 
-    function define_classe(int $primeira_trinca){
+    function define_classe($primeira_trinca){
         $classe = "";
-        if ($primeira_trinca >0 and $primeira_trinca < 127){
+        if ($primeira_trinca > 0 and $primeira_trinca < 127){
             $classe = "A";
         }elseif ($primeira_trinca > 127 and $primeira_trinca < 192){
             $classe = "B";
@@ -144,8 +140,10 @@ $mascara = 0;
 
         return $classe;
     }
+	
 
-    function privacidade_rede(int $primeira_trinca, int $segunda_trinca){
+
+    function privacidade_rede($primeira_trinca, $segunda_trinca){
           $privacidade = "";
           if ($primeira_trinca == 10){
               $privacidade = "Privado";
@@ -160,6 +158,11 @@ $mascara = 0;
           return $privacidade;
     }
 
+
+   if ($mascara>32) {
+   	echo "merda";
+   }
+
 if ($_POST["acao"] == "enviar") {
     $ip1 = $_POST["ip1"];
     $ip2 = $_POST["ip2"];
@@ -167,8 +170,40 @@ if ($_POST["acao"] == "enviar") {
     $ip4 = $_POST["ip4"];
     $mascara = $_POST["mascara"];
     echo "<br>";
+
+
     if ($ip1 != NULL and $ip2 != NULL and $ip3 != NULL and $ip4 != NULL and $mascara != NULL){
        
+
+       	function validacao($primeira_trinca){
+	        $val = "";
+	        if ($primeira_trinca > 0 and $primeira_trinca < 127){
+	            $val = "IP Válido";
+	        }elseif ($primeira_trinca > 127 and $primeira_trinca < 192){
+	            $val = "IP Válido";
+	        }elseif ($primeira_trinca > 191 and $primeira_trinca < 224){
+	            $val = "IP Válido";
+	        }elseif ($primeira_trinca > 223 and $primeira_trinca < 240){
+	            $val = "IP Válido";
+	        }elseif ($primeira_trinca > 239 and $primeira_trinca < 256){
+	            $val = "válido";
+	        }else{
+	            $val = "inválido";
+	        }
+
+        return $val;
+    }
+
+    if ($mascara>32) {
+    	echo "Insira um CIDR entre 24 e 32";
+    }elseif($ip1>255 || $ip1<1 || $ip1<0){
+    	echo "Endereço IP Inválido";
+    	}else{
+  		$val = validacao($ip1);
+        echo "Esse IP é " . $val;
+        echo "<br>";
+        echo "<br>";
+
         echo "O prefixo CIDR é " .$mascara;
         echo "<br>";
         echo "<br>";
@@ -210,6 +245,7 @@ if ($_POST["acao"] == "enviar") {
         echo "<br>";
         echo "<br>";
 
+
           
 
         $privada_publica = privacidade_rede($ip1, $ip2);
@@ -219,24 +255,27 @@ if ($_POST["acao"] == "enviar") {
                   
 
         $enderecos_de_rede = enderecos_subrede($mascara);
-        $enderecos_de_bcast = enderecos_bcast($mascara);
+        $enderecos_de_broadcast = enderecos_broadcast($mascara);
         $c = 0;
         while ($c < $redes){
-            echo "Rede ". $c." : ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_rede[$c].'<br>';
-            echo "Broadcast ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_bcast[$c].'<br>';
+        	$rede= $c+1;	
+            echo "Rede ". $rede." : ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_rede[$c].'<br>';
+            echo "Broadcast ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_broadcast[$c].'<br>';
             echo "<br>";
             $c = $c + 1;
         }
         
         echo "<br>";
         echo "<br>";
-        
-
+        }
+   //$resut=validar($primeira_trinca);
+       // $eita = validar($mascara);
+      //  echo $eita;
 
     }else{
-        echo "Você não informou o valor de todos campos. Por favor digite novamente";
+        echo "Preencha os campos corretamente e tente novamente";
+    }
     }
   
-}
-//}
+
 ?>

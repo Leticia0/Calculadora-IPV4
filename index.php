@@ -67,15 +67,15 @@ include "cabecalho.php";
 
                <div class="">
                     <br>
-                    <input type="text" id="ip1" maxlength="3" size="8" class="form-control" placeholder="192." style="width: 16%; float:left; margin-left: 3.45%">
-                    <input type="text" id="ip2" maxlength="3"  class="form-control" placeholder="168." style="width: 16%; float:left; margin-left: 1%">
-                    <input type="text" id="ip3" maxlength="3" size="1" class="form-control" placeholder="10." style="width: 16%; float:left; margin-left: 1%">
-                    <input type="text" id="last_input" name="ip4" maxlength="3" size="1" class="form-control" placeholder="100/" style="width: 16%; float:left; margin-left: 1%">
+                    <input type="text" id="ip1" maxlength="3" size="8" class="form-control" placeholder="192" style="width: 16%; float:left; margin-left: 3.45%">
+                    <input type="text" id="ip2" maxlength="3"  class="form-control" placeholder="168" style="width: 16%; float:left; margin-left: 1%">
+                    <input type="text" id="ip3" maxlength="3" size="1" class="form-control" placeholder="10" style="width: 16%; float:left; margin-left: 1%">
+                    <input type="text" id="last_input" name="ip4" maxlength="3" size="1" class="form-control" placeholder="100" style="width: 16%; float:left; margin-left: 1%">
 
-                    <input type="text" id="mask" maxlenght="2" size="2" class="form-control" placeholder="24" style="width: 16%; float:left; margin-left: 1%">
+                    <input type="text" id="mask" maxlenght="2" size="2" class="form-control" placeholder="24" style="width: 12%; float:left; margin-left: 1%">
                </div>
 
-                 <button class="btn btn-dark" style="margin-left: 1%; margin-top: 0%">Enviar</button>
+                 <button class="btn btn-dark" style="margin-left: 1%; margin-top: 0%">Calcular</button>
             
             </div>
         <br>
@@ -95,5 +95,5 @@ include "cabecalho.php";
 </html>
 
 <?php
-//include "rodape.php";
+include "rodape.php";
 ?>

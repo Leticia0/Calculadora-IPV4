@@ -43,12 +43,12 @@
         Calculadora IPV4
       </div>
     
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="" >
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
     <ul class="navbar-nav" style="margin-left:80%; "> <!--aqui muda o "sobre"-->
 
       <li class="nav-item">
-        <a class="nav-link" href="create_restaurante.php">Sobre</a>
+        <a class="nav-link" href="sobre.php">Sobre</a>
       </li>
       <li class="nav-item dropdown">
        

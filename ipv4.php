@@ -3,31 +3,52 @@
 ?>
 
 <html>
+<head>
     <title>Calculadora IPV4</title>
-        <head>
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
 
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-        </head>
-<br>
-<br>
-        <body style='background-image: url("fundo.jpg")'>
-            <div style="margin-right: 10%">
-                <div style="margin-left: 10%">
-                  <div style="background-color: white">
+        #last_input{
+            margin-right: 0.5%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div style="background-image: url(fundo2.jpg); background-attachment: fixed;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3 style="margin-bottom: 3%; color: white; font-family: serif;">Sobre IPV4</h3>
+        <br>
+        <div class="container" style="background-color: white; opacity: 0.7; width: 55%; height: 100% border-radius: 0.3rem;">
+
+            <div>
+
+               <div class="">
                     <br>
-                    <h2 style="margin-left: 40%">Sobre IPV4</h2>
-                    <br>
-                    <br>
-                    <h5 style="color: #696969">Existem duas versões do protocolo IP: o IPV4 é a versão atual, que utilizamos na grande maioria das situações, enquanto o IPV6 é a versão atualizada, que prevê um número brutalmente maior de endereços e deve começar a se popularizar a partir de 2010 ou 2012, quando os endereços IPV4 começarem a se esgotar.<br><br>
+                    <p style=   "width: 45%;
+                                background-color: #FFFFFF;
+                                text-align: center;
+                                float: center;
+                                opacity: 0.9;
+                                margin-left: 27.5%;
+                                border-radius: 0.3rem;"></p></div>
+
+   Existem duas versões do protocolo IP: o IPV4 é a versão atual, que utilizamos na grande maioria das situações, enquanto o IPV6 é a versão atualizada, que prevê um número brutalmente maior de endereços e deve começar a se popularizar a partir de 2010 ou 2012, quando os endereços IPV4 começarem a se esgotar.<br><br>
 
                     No IPV4, os endereço IP são compostos por 4 blocos de 8 bits (32 bits no total), que são representados através de números de 0 a 255, como "200.156.23.43" ou "64.245.32.11".<br><br>
 
@@ -49,12 +70,25 @@
 
                     Mais uma séria limitação do protocolo IPv4 é a falta de uma camada de segurança. Ele foi "desenvolvido para ser usado em redes onde as pessoas confiam umas nas outras" e não em um ambiente anárquico como a internet atual. Camadas de autenticação e encriptação precisam ser adicionadas através de protocolos implantados sobre o TCP/IP, como no CHAP, SSH e assim por diante.<br><br>
 
-                    O problema da falta de endereços pode ser contornada de diversas formas, como por exemplo através do NAT, onde um único endereço IP pode ser compartilhado entre vários hosts (em teoria até 16 milhões, usando um endereço da faixa 10.x.x.x na rede interna). Quase todos já utilizamos o NAT ao compartilhar a conexão usando o ICQ do Windows, o IP Masquerading no Linux, ou mesmo mini-distribuições como o Coyote e o Freesco. A maior limitação do NAT é que os hosts sob a conexão compartilhada não recebem conexões entrantes, impedindo que os usuários utilizem programas de compartilhamento de arquivos, servidores Web ou FTP, muitos jogos multiplayer e assim por diante. Numa rede pequena ainda é possível redirecionar algumas portas do servidor para o host que for rodar estas aplicações, mas esta não seria uma opção para por exemplo um provedor de acesso que resolvesse, por falta de endereços IP, oferecer conexões NAT para seus clientes.</h5>
-                </div>
-            </div>
-        </div>
-    </body>
+                    O problema da falta de endereços pode ser contornada de diversas formas, como por exemplo através do NAT, onde um único endereço IP pode ser compartilhado entre vários hosts (em teoria até 16 milhões, usando um endereço da faixa 10.x.x.x na rede interna). Quase todos já utilizamos o NAT ao compartilhar a conexão usando o ICQ do Windows, o IP Masquerading no Linux, ou mesmo mini-distribuições como o Coyote e o Freesco. A maior limitação do NAT é que os hosts sob a conexão compartilhada não recebem conexões entrantes, impedindo que os usuários utilizem programas de compartilhamento de arquivos, servidores Web ou FTP, muitos jogos multiplayer e assim por diante. Numa rede pequena ainda é possível redirecionar algumas portas do servidor para o host que for rodar estas aplicações, mas esta não seria uma opção para por exemplo um provedor de acesso que resolvesse, por falta de endereços IP, oferecer conexões NAT para seus clientes.</p>
+                    
+               </div>
+                 <a href="index.php"><button class="btn btn-dark" style="margin-left: 1%; margin-top: 0%">Voltar</button>
+<br>
+            
+          
+        <br>
+        </div><!--fecha o container-->
+
+     <br>
+     <br>
+</a></div></div></div>
+</body>
 </html>
+
+<?php
+include "rodape.php";
+?>
 
 <?php
 	include "rodape.php";
