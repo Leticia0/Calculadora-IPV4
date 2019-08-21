@@ -158,11 +158,6 @@ $mascara = 0;
           return $privacidade;
     }
 
-
-   if ($mascara>32) {
-   	echo "merda";
-   }
-
 if ($_POST["acao"] == "enviar") {
     $ip1 = $_POST["ip1"];
     $ip2 = $_POST["ip2"];
@@ -194,7 +189,7 @@ if ($_POST["acao"] == "enviar") {
         return $val;
     }
 
-    if ($mascara>32) {
+    if ($mascara>32 || $mascara<24) {
     	echo "Insira um CIDR entre 24 e 32";
     }elseif($ip1>255 || $ip1<1 || $ip1<0){
     	echo "Endereço IP Inválido";
