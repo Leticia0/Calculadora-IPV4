@@ -39,7 +39,7 @@
 </ul>
     </div>
      
-      <div style="margin-right: 20%;">
+      <div style="margin-right: 16.5%;">
         Calculadora IPV4
       </div>
     

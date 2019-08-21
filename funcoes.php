@@ -1,5 +1,19 @@
 <?php
 $mascara = 0;
+/*
+  if ($mascara<24) {
+        echo "Digite uma máscara entre 24 e 32";
+    }else{*/
+/*
+
+    function valida($primeira_trinca){
+        if ($primeira_trinca>255 and $primeira_trinca<0) {
+            echo "IP Inválido"
+        }
+
+    }
+*/
+
     function qtd_redes(int $mascara)
     {
         $total = 32;
@@ -12,10 +26,6 @@ $mascara = 0;
         return $qtd_redes;
     }
 
-    
-
-    
-
     function qtd_enderecos($mascara)
     {
         $total = 32;
@@ -25,24 +35,61 @@ $mascara = 0;
         return $qtd_enderecos;
     }
 
+
+    
+      
+    function enderecos_subrede(int $mascara) {
+        $qtde = qtd_redes($mascara);
+        $qtde_enderecos = qtd_enderecos($mascara);
+        $c = 1;
+        $end_rede = 0;
+        $resp = array();
+        while ($c <= $qtde) {
+            array_push($resp, $end_rede);
+            $end_rede = $end_rede + $qtde_enderecos;
+            $c = $c + 1;
+        }
+        return $resp;
+    } 
+
+    function enderecos_bcast(int $mascara) {
+        $qtde = qtd_redes($mascara);
+        $qtde_enderecos = qtd_enderecos($mascara);
+        $c = 1;
+        $end_bcast = $qtde_enderecos - 1;
+        $resp = array();
+        while ($c <= $qtde) {
+            array_push($resp, $end_bcast);
+            $end_bcast = $end_bcast + $qtde_enderecos;
+            $c = $c + 1;
+        }
+        return $resp;
+    }
+
+
     function qtd_hosts(int $mascara)
     {
         $total = 32;
         $bits_zerados = $total - $mascara;
 
         $qtd_hosts = pow(2, $bits_zerados);
+        $qtd_hosts= $qtd_hosts-2;
 
-        return $qtd_hosts;
+        
+
+        if ($qtd_hosts<0) {
+            echo "Não";
+        }else{
+            return $qtd_hosts;
+        }
     }
 
     function primeiro_host_rede(int $quarta_trinca, int $mascara)
     {
         $q = qtd_enderecos($mascara);
-        //print $q;
 
         $posicao_rede = (int) ($quarta_trinca/$q);
 
-        //echo $posicao_rede;
         $primeiro_endereco = $posicao_rede * $q;
         $primeiro_host = $primeiro_endereco + 1;
 
@@ -52,11 +99,9 @@ $mascara = 0;
     function ultimo_host_rede(int $quarta_trinca, int $mascara)
     {
         $q = qtd_enderecos($mascara);
-        //print $q;
 
         $posicao_rede = (int) ($quarta_trinca/$q);
 
-        //echo $posicao_rede;
         $primeiro_endereco = $posicao_rede * $q;
         $calculo = $primeiro_endereco + $q;
         $ultimo_host = $calculo - 1;
@@ -70,7 +115,7 @@ $mascara = 0;
         $bits_setados = $mascara_decimal - 24;
 
 //        $bits_zerados = 8 - $bits_setados;
-        //TODO PQ TÁ ERRADO
+
 
         $quarta_trinca = pow(2, $bits_setados);
         $quarta_trinca -= 1;
@@ -123,50 +168,75 @@ if ($_POST["acao"] == "enviar") {
     $mascara = $_POST["mascara"];
     echo "<br>";
     if ($ip1 != NULL and $ip2 != NULL and $ip3 != NULL and $ip4 != NULL and $mascara != NULL){
-        $a = qtd_redes($mascara);
-        echo "Essa máscara fornece ".$a." redes";
+       
+        echo "O prefixo CIDR é " .$mascara;
         echo "<br>";
         echo "<br>";
 
-        $b = qtd_enderecos($mascara);
-        echo "Essa máscara fornece ".$b." endereços";
+        $redes = qtd_redes($mascara);
+        echo "Essa máscara fornece " . $redes . " redes";
+        echo "<br>";
+        echo "<br>";
+
+        $endereco = qtd_enderecos($mascara);
+        echo "A máscara fornece " . $endereco . " endereços";
+        echo "<br>";
+        echo "<br>";
+
+
+       
+        $hosts = qtd_hosts($mascara);
+        echo " Fornece " . $hosts . " hosts livres";
+        echo "<br>";
+        echo "<br>";
+
+        $primeiro_host = primeiro_host_rede($ip4, $mascara);
+        echo "O primeiro host de rede é " . $primeiro_host . " ";
          echo "<br>";
         echo "<br>";
 
-        $c = qtd_hosts($mascara);
-        echo "Essa máscara fornece ".$c." hosts";
+        $ultimo_host = ultimo_host_rede($ip4, $mascara);
+        echo "O último host de rede é " . $ultimo_host . " ";
          echo "<br>";
         echo "<br>";
 
-        $d = primeiro_host_rede($ip4, $mascara);
-        echo "O primeiro host dessa rede é "." $d";
+        $mascara_decimal = calculo_mascara($mascara);
+        echo "A máscara decimal é" . " $mascara_decimal";
          echo "<br>";
         echo "<br>";
 
-        $e = ultimo_host_rede($ip4, $mascara);
-        echo "O último host é "." $e";
-         echo "<br>";
-        echo "<br>";
-
-        $f = calculo_mascara($mascara);
-        echo "A máscaras é"." $f";
-         echo "<br>";
-        echo "<br>";
-
-        $g = define_classe($ip1);
-        echo "A classe desse endereço é ". $g;
+        $resultado_classe = define_classe($ip1);
+        echo "A classe desse endereço é " . $resultado_classe;
         echo "<br>";
         echo "<br>";
 
           
 
-        $h = privacidade_rede($ip1, $ip2);
-        echo "O endereço é ". $h;
+        $privada_publica = privacidade_rede($ip1, $ip2);
+        echo "O endereço é " . $privada_publica;
          echo "<br>";
         echo "<br>";
-    }else{
-        echo "Você não informou o valor de todos campos. Por favor digite noavemente";
-    }
-}
+                  
 
+        $enderecos_de_rede = enderecos_subrede($mascara);
+        $enderecos_de_bcast = enderecos_bcast($mascara);
+        $c = 0;
+        while ($c < $redes){
+            echo "Rede ". $c." : ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_rede[$c].'<br>';
+            echo "Broadcast ". $ip1.'.'.$ip2.'.'.$ip3.'.'.$enderecos_de_bcast[$c].'<br>';
+            echo "<br>";
+            $c = $c + 1;
+        }
+        
+        echo "<br>";
+        echo "<br>";
+        
+
+
+    }else{
+        echo "Você não informou o valor de todos campos. Por favor digite novamente";
+    }
+  
+}
+//}
 ?>
