@@ -12,6 +12,10 @@ $mascara = 0;
         return $qtd_redes;
     }
 
+    
+
+    
+
     function qtd_enderecos($mascara)
     {
         $total = 32;
@@ -64,6 +68,7 @@ $mascara = 0;
 
         $mascara = '255.255.255';
         $bits_setados = $mascara_decimal - 24;
+
 //        $bits_zerados = 8 - $bits_setados;
         //TODO PQ TÁ ERRADO
 
@@ -152,6 +157,8 @@ if ($_POST["acao"] == "enviar") {
         echo "A classe desse endereço é ". $g;
         echo "<br>";
         echo "<br>";
+
+          
 
         $h = privacidade_rede($ip1, $ip2);
         echo "O endereço é ". $h;

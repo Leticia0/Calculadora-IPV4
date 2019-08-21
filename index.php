@@ -64,20 +64,23 @@
 
                 <h3 style="margin-bottom: 3%; color: white; font-family: serif;">Digite um ip válido</h3>
                 <br>
-            <div class="container" style="background-color: white; opacity: 0.7; ">
+            <div class="container" style="background-color: white; opacity: 0.7; width: 55%;">
 
                 <div>
 
                      <div class="col-8">
-                       <input type="text" id="ip1" maxlength="3" size="8" class="form-control" >.
-                       <input type="text" id="ip2" maxlength="3"  class="form-control">.
-                       <input type="text" id="ip3" maxlength="3" size="1" class="form-control" >.
-                       <input type="text" id="last_input" name="ip4" maxlength="3" size="1" class="form-control" >/
+                        <br>
+                       <input type="text" id="ip1" maxlength="3" size="8" class="form-control" placeholder="192">.
+                       <input type="text" id="ip2" maxlength="3"  class="form-control" placeholder="168">.
+                       <input type="text" id="ip3" maxlength="3" size="1" class="form-control" placeholder="10" >.
+                       <input type="text" id="last_input" name="ip4" maxlength="3" size="1" class="form-control" placeholder="100">/
                     
-                       <input type="text" id="mask" maxlenght="2" size="2" class="form-control">
+                       <input type="text" id="mask" maxlenght="2" size="2" class="form-control" placeholder="24">
                     </div>
-                <button class="btn btn-light" style="margin-left: 36%;">Enviar</button>
+                <button class="btn btn-dark" style="margin-left: 36%;">Enviar</button>
+            
                 </div>
+                <br>
             </div><!--fecha o container-->
                 <div id="resultado">
                     <br>
