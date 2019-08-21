@@ -55,8 +55,9 @@
             <body>
 
                 <h5 style="margin-top: 6%;">Digite um ip válido</h5>
+            <div class="container" style="background-color: #9da1a5e6;">
 
-                <div id="octeto">
+                <div>
 
                      <div class="col-8">
                        <input type="text" id="ip1" maxlength="3" size="8" class="form-control" >.
@@ -68,9 +69,11 @@
                     </div>
                 <button class="btn btn-light" style="margin-left: 36%">Enviar</button>
                 </div>
-
+            </div><!--fecha o container-->
                 <div id="resultado">
+                    <br>
                     <div id="resultado2"></div>
+                    <br>
                   </div>
                 <br>
                 <br>

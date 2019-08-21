@@ -116,40 +116,47 @@ if ($_POST["acao"] == "enviar") {
     $ip3 = $_POST["ip3"];
     $ip4 = $_POST["ip4"];
     $mascara = $_POST["mascara"];
-
+    echo "<br>";
     if ($ip1 != NULL and $ip2 != NULL and $ip3 != NULL and $ip4 != NULL and $mascara != NULL){
         $a = qtd_redes($mascara);
         echo "Essa máscara fornece ".$a." redes";
         echo "<br>";
+        echo "<br>";
 
         $b = qtd_enderecos($mascara);
         echo "Essa máscara fornece ".$b." endereços";
+         echo "<br>";
         echo "<br>";
-
+        
         $c = qtd_hosts($mascara);
         echo "Essa máscara fornece ".$c." hosts";
+         echo "<br>";
         echo "<br>";
 
         $d = primeiro_host_rede($ip4, $mascara);
         echo "O primeiro host dessa rede é "." $d";
+         echo "<br>";
         echo "<br>";
 
         $e = ultimo_host_rede($ip4, $mascara);
-        echo "O último host dessa rede é "." $e";
+        echo "O último host é "." $e";
+         echo "<br>";
         echo "<br>";
 
         $f = calculo_mascara($mascara);
-        echo "A máscara decimal é"." $f";
+        echo "A máscaras é"." $f";
+         echo "<br>";
         echo "<br>";
 
         $g = define_classe($ip4);
         echo "A classe desse endereço é ". $g;
         echo "<br>";
+        echo "<br>";
 
         $h = privacidade_rede($ip1, $ip2);
         echo "O endereço é ". $h;
+         echo "<br>";
         echo "<br>";
-
     }else{
         echo "Você não informou o valor de todos campos. Por favor digite noavemente";
     }
