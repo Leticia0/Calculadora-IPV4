@@ -59,10 +59,11 @@
                     <br>
                     <br>
                     <br>
-                    <br>
+                    
 
 
-                <h3 style="margin-bottom: 3%; color: white;">Digite um ip válido</h3>
+                <h3 style="margin-bottom: 3%; color: white; font-family: serif;">Digite um ip válido</h3>
+                <br>
             <div class="container" style="background-color: white; opacity: 0.7; ">
 
                 <div>
@@ -75,7 +76,7 @@
                     
                        <input type="text" id="mask" maxlenght="2" size="2" class="form-control">
                     </div>
-                <button class="btn btn-light" style="margin-left: 36%">Enviar</button>
+                <button class="btn btn-light" style="margin-left: 36%;">Enviar</button>
                 </div>
             </div><!--fecha o container-->
                 <div id="resultado">

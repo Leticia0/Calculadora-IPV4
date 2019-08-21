@@ -76,17 +76,17 @@ $mascara = 0;
 
     }
 
-    function define_classe(int $quarta_trinca){
+    function define_classe(int $primeira_trinca){
         $classe = "";
-        if ($quarta_trinca >0 and $quarta_trinca < 127){
+        if ($primeira_trinca >0 and $primeira_trinca < 127){
             $classe = "A";
-        }elseif ($quarta_trinca > 127 and $quarta_trinca < 192){
+        }elseif ($primeira_trinca > 127 and $primeira_trinca < 192){
             $classe = "B";
-        }elseif ($quarta_trinca > 191 and $quarta_trinca < 224){
+        }elseif ($primeira_trinca > 191 and $primeira_trinca < 224){
             $classe = "C";
-        }elseif ($quarta_trinca > 223 and $quarta_trinca < 240){
+        }elseif ($primeira_trinca > 223 and $primeira_trinca < 240){
             $classe = "D";
-        }elseif ($quarta_trinca > 239 and $quarta_trinca < 256){
+        }elseif ($primeira_trinca > 239 and $primeira_trinca < 256){
             $classe = "E";
         }else{
             $classe = "Tente Novamente. Houve um erro";
@@ -127,7 +127,7 @@ if ($_POST["acao"] == "enviar") {
         echo "Essa máscara fornece ".$b." endereços";
          echo "<br>";
         echo "<br>";
-        
+
         $c = qtd_hosts($mascara);
         echo "Essa máscara fornece ".$c." hosts";
          echo "<br>";
@@ -148,7 +148,7 @@ if ($_POST["acao"] == "enviar") {
          echo "<br>";
         echo "<br>";
 
-        $g = define_classe($ip4);
+        $g = define_classe($ip1);
         echo "A classe desse endereço é ". $g;
         echo "<br>";
         echo "<br>";
