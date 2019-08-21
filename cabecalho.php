@@ -34,18 +34,18 @@
         <a class="nav-link" href="ipv4.php">Sobre IPV4</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Como Calcular</a>
+        <a class="nav-link" href="como_calc.php">Como Calcular</a>
       </li>
 </ul>
     </div>
      
-      <div >
+      <div style="margin-right: 20%;">
         Calculadora IPV4
       </div>
     
     <div class="collapse navbar-collapse" id="navbarNavDropdown" style="" >
 
-    <ul class="navbar-nav" style="margin-left:78%; margin-right: 20%;"> <!--aqui muda o "sobre"-->
+    <ul class="navbar-nav" style="margin-left:80%; "> <!--aqui muda o "sobre"-->
 
       <li class="nav-item">
         <a class="nav-link" href="create_restaurante.php">Sobre</a>
