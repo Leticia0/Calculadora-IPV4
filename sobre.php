@@ -77,7 +77,9 @@
      <br>
         </div><!--fecha o container-->
           
-</a></div></div></div>
+</div>
+</div>
+</a>
 </body>
 </html>
 
