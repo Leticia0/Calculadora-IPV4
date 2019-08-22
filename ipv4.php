@@ -32,7 +32,7 @@
         <br>
         <br>
         <br>
-        <h3 style="margin-bottom: 3%; color: white; font-family: serif;">Sobre IPV4</h3>
+        <h3 style="margin-bottom: 3%; color: white; font-family: serif; margin-left: 45.5%">Sobre IPV4</h3>
         <br>
         <div class="container" style="background-color: white; opacity: 0.7; width: 55%; height: 100% border-radius: 0.3rem;">
 
@@ -85,10 +85,6 @@
 </a></div></div></div>
 </body>
 </html>
-
-<?php
-include "rodape.php";
-?>
 
 <?php
 	include "rodape.php";
